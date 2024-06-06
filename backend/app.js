@@ -7,6 +7,10 @@ const app = express();
 
 app.use(express.json())
 
+const testRoute = require('./routes/testRoute')
+
+app.use('/api/v1',testRoute);
+
 
 const start = async() => {
     try {
