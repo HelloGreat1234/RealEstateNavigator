@@ -4,12 +4,21 @@ const express = require('express')
 
 const app = express();
 
-app.use(express.json())
 
 const helmet = require('helmet');
 const cors = require('cors');
 const xss = require('xss-clean');
 const rateLimiter = require('express-rate-limit');
+
+app.use(cors({
+    origin: ["https://real-estate-navigator-noxxb5g1s-garvit-guptas-projects.vercel.app/", "http://localhost:3000"], // Allow requests from these origins
+    methods: ["GET", "POST", "PATCH", "DELETE"], // Allowed methods
+    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+    credentials: true // Allow cookies to be sent with requests
+}));
+
+
+app.use(express.json())
 
 const mongoose = require('mongoose')
 
@@ -20,12 +29,6 @@ const propertyRoute = require('./routes/property')
 const errorHandler = require('./middleware/errorHandler')
 const notFound = require('./middleware/not-found')
 
-app.use(cors({
-    origin: ["https://real-estate-navigator-noxxb5g1s-garvit-guptas-projects.vercel.app/", "http://localhost:3000"], // Allow requests from these origins
-    methods: ["GET", "POST", "PATCH", "DELETE"], // Allowed methods
-    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
-    credentials: true // Allow cookies to be sent with requests
-}));
 
 app.use('/uploads', express.static('uploads'))
 
