@@ -1,9 +1,6 @@
-import logo from "./logo.svg";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import "./App.css";
-import Navbar from "./components/Navbar";
 import Form from "./components/Form";
-import PropertyCard from "./components/PropertyCard";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Home from "./pages/Home";

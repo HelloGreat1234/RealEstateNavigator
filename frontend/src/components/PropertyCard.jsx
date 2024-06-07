@@ -6,7 +6,7 @@ import { IoLocationOutline } from "react-icons/io5";
 
 export default function PropertyCard() {
   return (
-    <div className="w-1/3 border-2 border-gray-300 rounded-lg mx-auto">
+    <div className="w-1/3 border-2 border-gray-300 rounded-lg mx-auto p-2">
       <div className="w-full flex flex-row justify-center">
         <div className="w-1/2 p-2">
           <img
