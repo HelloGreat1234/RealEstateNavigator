@@ -6,5 +6,4 @@ router.route('/test').get((req,res)=>{
         "Hello" : "This is just a testing route for deployment"
     })
 })
-
 module.exports = router
