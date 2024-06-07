@@ -1,7 +1,12 @@
 import logo from "./logo.svg";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Form from "./components/Form";
+import PropertyCard from "./components/PropertyCard";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -22,10 +27,14 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <>
-      <Navbar />
-      <Form />
-    </>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/signup" element={<Signup/>}/>
+      <Route path="/login" element={<Login/>}/>
+      <Route path="/propertyform" element={<Form/>}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -2,10 +2,10 @@ import React from "react";
 
 export default function Form() {
   return (
-    <div className="py-6">
-      <div className="flex flex-col border-2 rounded-sm p-6 border-black mx-auto w-3/4">
+    <div className="py-6 bg-gray-100">
+      <div className="flex flex-col border-2 rounded-md p-6 bg-white mx-auto w-3/4">
         <div className="w-full">
-          <h1 className="text-center text-xl font-bold pb-6 text-blue-500">
+          <h1 className="text-center text-xl font-bold pb-6 text-indigo-600">
             Let's list the property
           </h1>
         </div>
@@ -72,7 +72,7 @@ export default function Form() {
               placeholder="Price of Parcel per acre"
             />
             <button
-              className="col-span-2 w-1/5 border-2 text-lg font-semibold border-black bg-blue-500 hover:bg-blue-700 rounded-md p-2 mx-auto"
+              className="col-span-2 w-1/5 border-2 text-lg font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-md p-2 mx-auto"
               type="button"
             >
               Submit
