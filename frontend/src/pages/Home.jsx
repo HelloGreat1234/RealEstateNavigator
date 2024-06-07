@@ -9,6 +9,7 @@ export default function Home() {
       <Navbar />
       <PropertyCard img='https://wallpaperaccess.com/full/31193.jpg' name='Hotel Milan - Sector 10' p1='2 km away from metro' p2='4 star hotel' p3='$240 per night'/>
       <Footer />
+      {/* <Test /> */}
     </>
   )
 }
