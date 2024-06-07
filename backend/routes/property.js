@@ -5,7 +5,7 @@ const upload = require('../middleware/upload')
 
 const {getProperty,submitProperty,getAllProperty,deleteProperty,updateProperty} = require('../controllers/property')
 
-router.route('/').get(authMiddleware,getAllProperty).post(authMiddleware,upload.single('photo'),submitProperty)
+router.route('/').get(authMiddleware,getAllProperty).post(authMiddleware,upload.array('photo[]'),submitProperty)
 
 // router.post('/register',upload.single('avatar'), registerUser)
 

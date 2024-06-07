@@ -12,8 +12,13 @@ const submitProperty = async (req, res, next) => {
       throw new BadRequestError("User does not exist");
     }
 
-    if(req.file){
-        req.body.photo = req.file.path
+    if(req.files){
+        let path = ''
+        req.files.forEach(function(files,index, arr){
+            path = path +files.path + ','
+        });
+        path = path.substring(0,path.lastIndexOf(","))
+        req.body.photo = path
     }
 
     const newProperty = await Property.create({ ...req.body });
