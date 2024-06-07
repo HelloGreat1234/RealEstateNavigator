@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Form() {
   return (
-    <div className="py-6 bg-gray-100">
-      <div className="flex flex-col border-2 rounded-md p-6 bg-white mx-auto w-3/4">
+    <div className="flex py-6 justify-center items-center h-screen bg-gray-100">
+      <div className="flex flex-col justify-center shadow-md border-2 rounded-md p-6 bg-white mx-auto w-3/4">
         <div className="w-full">
           <h1 className="text-center text-xl font-bold pb-6 text-indigo-600">
             Let's list the property
@@ -12,7 +12,7 @@ export default function Form() {
         <div>
           <form
             className="grid grid-cols-2 gap-3 justify-center items-center gap-y-5"
-            action="/propertyDetails"
+            action="/xyx"
             method="POST"
           >
             <input
@@ -72,8 +72,8 @@ export default function Form() {
               placeholder="Price of Parcel per acre"
             />
             <button
-              className="col-span-2 w-1/5 border-2 text-lg font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-md p-2 mx-auto"
-              type="button"
+              className="col-span-2 w-1/5 border-2 text-lg font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-md p-2 mx-auto focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              type="submit"
             >
               Submit
             </button>

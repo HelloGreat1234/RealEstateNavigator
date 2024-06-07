@@ -4,22 +4,22 @@ import { MdOutlineFreeBreakfast } from "react-icons/md";
 import { GiBabyBottle } from "react-icons/gi";
 import { IoLocationOutline } from "react-icons/io5";
 
-export default function PropertyCard() {
+export default function PropertyCard(props) {
   return (
-    <div className="w-1/3 border-2 border-gray-300 rounded-lg mx-auto p-2">
+    <div className="w-1/3 border-2 border-gray-300  shadow-md rounded-lg mx-auto p-2">
       <div className="w-full flex flex-row justify-center">
-        <div className="w-1/2 p-2">
+        <div className="p-2 w-1/2">
           <img
             className="rounded-lg"
-            src="https://wallpaperaccess.com/full/31193.jpg"
+            src={props.img}
             alt="Error Loading img"
           />
         </div>
         <div className="w-1/2 p-2">
-          <h1 className="text-xl font-medium">Hello</h1>
-          <p>1.4 km from oyo</p>
-          <p>4-star Hotel</p>
-          <p>$570 per night</p>
+          <h1 className="text-xl font-medium">{props.name}</h1>
+          <p>{props.p1}</p>
+          <p>{props.p2}</p>
+          <p>{props.p3}</p>
         </div>
       </div>
 
