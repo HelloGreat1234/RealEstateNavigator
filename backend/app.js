@@ -29,7 +29,13 @@ app.use('/api/v1/property',propertyRoute)
 app.use(notFound)
 app.use(errorHandler)
 
-
+app.use(cors({
+    origin: ["https://real-estate-navigator-noxxb5g1s-garvit-guptas-projects.vercel.app/", "http://localhost:3000"], // Allow requests from these origins
+    methods: ["GET", "POST", "PATCH", "DELETE"], // Allowed methods
+    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+    credentials: true // Allow cookies to be sent with requests
+  }));
+  
 
 app.set('trust proxy', 1);
 app.use(
@@ -40,13 +46,7 @@ app.use(
 );
 app.use(express.json());
 app.use(helmet());
-app.use(cors({
-    origin: ["https://real-estate-navigator-noxxb5g1s-garvit-guptas-projects.vercel.app/", "http://localhost:3000"], // Allow requests from these origins
-    methods: ["GET", "POST", "PATCH", "DELETE"], // Allowed methods
-    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
-    credentials: true // Allow cookies to be sent with requests
-  }));
-  
+
 app.use(xss());
 
 const start = async() => {
