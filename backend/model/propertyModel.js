@@ -15,7 +15,7 @@ const Property = mongoose.Schema({
         required : true
     },
     city : {
-        type : Number,
+        type : String,
         required : true
     }
 })

@@ -12,37 +12,41 @@ const registerUser = async (req, res) => {
                 name: newUser.name,
                 email: newUser.email
             },
-            token : token
+            token: token
         })
     } catch (error) {
-        console.log(error)
+        next(error)
     }
 }
 
-const loginUser = async (req, res) => {
-    const { email, password } = req.body;
+const loginUser = async (req, res, next) => {
+    try {
+        const { email, password } = req.body;
 
-    const user = await User.findOne({email : email});
+        const user = await User.findOne({ email: email });
 
-    if (!user) {
-        throw new UnauthenticatedError('Invalid Credentials')
+        if (!user) {
+            throw new UnauthError('Invalid Credentials')
+        }
+
+        const isPasswordCorrect = user.PasswordCheck(password);
+
+        if (!isPasswordCorrect) {
+            throw new UnauthError('Entered password is not correct');
+        }
+
+        const token = user.getToken();
+        res.status(StatusCodes.CREATED).json({
+            user: {
+                name: user.name,
+                email: user.email
+            },
+            token: token
+        })
+    }catch (error) { 
+        next(error)
     }
-
-    const isPasswordCorrect = user.PasswordCheck(password);
-
-    if (!isPasswordCorrect) {
-        throw new UnauthError('Entered password is not correct');
-    }
-
-    const token = user.getToken();
-    res.status(StatusCodes.CREATED).json({
-        user: {
-            name: user.name,
-            email: user.email
-        },
-        token: token
-    })
-}
+} 
 
 module.exports = {
     registerUser, loginUser
