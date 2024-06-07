@@ -33,42 +33,36 @@ export default function Form() {
               className=" border-2 border-black p-3 rounded-md"
               type="text"
               name="area"
-              //   value=""
               placeholder="Area / Sector / Locality"
             />
             <input
               className=" border-2 border-black p-3 rounded-md"
               type="text"
               name="city"
-              //   value=""
               placeholder="City"
             />
             <input
               className=" border-2 border-black p-3 rounded-md"
               type="text"
               name="state"
-              //   value=""
               placeholder="State"
             />
             <input
               className=" border-2 border-black p-3 rounded-md"
               type="number"
               name="pincode"
-              //   value=""
               placeholder="Pincode"
             />
             <input
               className=" border-2 border-black p-3 rounded-md"
               type="number"
               name="size"
-              //   value=""
               placeholder="Size of Property"
             />
             <input
               className=" border-2 border-black p-3 rounded-md"
               type="number"
               name="price"
-              //   value=""
               placeholder="Price of Parcel per acre"
             />
             <button
