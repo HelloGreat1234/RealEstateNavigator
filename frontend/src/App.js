@@ -5,6 +5,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Home from "./pages/Home";
 import ContactPage from "./pages/ContactPage";
+import PropertyPage from "./pages/PropertyPage";
 
 function App() {
   return (
@@ -31,7 +32,8 @@ function App() {
       <Route path="/contact" element={<ContactPage/>}/>
       <Route path="/signup" element={<Signup/>}/>
       <Route path="/login" element={<Login/>}/>
-      <Route path="/propertyform" element={<Form/>}/>
+      <Route path="/propertyform" element={<Form/>} />
+      <Route path="/PropertyPage" element={<PropertyPage/>} />
     </Routes>
     </BrowserRouter>
   );
