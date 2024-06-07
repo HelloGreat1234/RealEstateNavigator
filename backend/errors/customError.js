@@ -1,8 +1,8 @@
-class customError extends Error{
-    constructor(error,statusCode){
-        super(error)
-        this.statusCode = statusCode || 500;
+class CustomAPIError extends Error {
+    constructor(message) {
+      super(message)
     }
-}
-
-module.exports = customError
+  }
+  
+  module.exports = CustomAPIError
+  
