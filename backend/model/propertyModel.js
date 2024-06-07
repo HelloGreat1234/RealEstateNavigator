@@ -17,6 +17,9 @@ const Property = mongoose.Schema({
     city : {
         type : String,
         required : true
+    },
+    photo : {
+        type : String
     }
 })
 

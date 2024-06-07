@@ -4,6 +4,7 @@ const UnauthError = require('../errors/Unauthorized')
 
 const registerUser = async (req, res) => {
     try {
+
         const newUser = await User.create({ ...req.body });
         const token = newUser.getToken();
 

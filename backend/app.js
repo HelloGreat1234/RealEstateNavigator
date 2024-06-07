@@ -20,12 +20,16 @@ const propertyRoute = require('./routes/property')
 const errorHandler = require('./middleware/errorHandler')
 const notFound = require('./middleware/not-found')
 
+app.use('/uploads',express.static('uploads'))
+
 // app.use('/api/v1',testRoute);
 app.use('/api/v1',authRoute)
 app.use('/api/v1/property',propertyRoute)
 
 app.use(notFound)
 app.use(errorHandler)
+
+
 
 app.set('trust proxy', 1);
 app.use(
